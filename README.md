@@ -36,7 +36,7 @@ The module is currently supported on Magento >= 2.1.
 Add the module to the require section of the composer file:
 
 ```
-$ composer require "mx/module-phinx-migrations": "^0.1"
+$ composer require mx/module-phinx-migrations
 ```
 
 ## Enabling the module
