@@ -11,6 +11,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Setup\Module\DataSetup;
 use Magento\Setup\Module\Setup;
 use Phinx\Migration\AbstractMigration;
+use Zend\Http\PhpEnvironment\Request;
 
 /**
  * @package MX\PhinxMigrations
@@ -35,7 +36,7 @@ abstract class Migration extends AbstractMigration
      */
     protected function init()
     {
-        $bootstrap = Bootstrap::create(BP, $_SERVER);
+        $bootstrap = Bootstrap::create(BP, $this->getServerParams());
 
         $this->objectManager = $bootstrap->getObjectManager();
         $this->schemaSetup = $this->getService(Setup::class);
@@ -56,5 +57,12 @@ abstract class Migration extends AbstractMigration
     protected function getConnection(): AdapterInterface
     {
         return $this->schemaSetup->getConnection();
+    }
+
+    protected function getServerParams(): array
+    {
+        $request = new Request();
+
+        return $request->getServer()->toArray();
     }
 }
