@@ -39,7 +39,7 @@
         "map": [
             [
                 "etc/phinx.php",
-                "phinx.php"
+                "../../phinx.php"
             ]
         ]
     }
