@@ -6,7 +6,10 @@ $dbConfig = getPhinxDbConfig();
 
 return [
     'paths' => [
-        'migrations' => __DIR__. '/src/*/*/etc/migrations',
+        'migrations' => [
+            __DIR__. '/src/*/*/etc/migrations',
+            __DIR__. '/app/code/*/*/etc/migrations',
+        ]
     ],
     'templates' => [
         'file' => __DIR__ . '/vendor/mx/module-phinx-migrations/etc/Migration.php.txt',
