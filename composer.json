@@ -1,0 +1,46 @@
+{
+    "name": "mx/module-phinx-migrations",
+    "description": "Magento 2 module that integrates phinx DB migrations as a replacement for the default setup upgrade, therefore enabling zero downtime deployments.",
+    "version": "1.0.0",
+    "type": "magento2-module",
+    "license": "proprietary",
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://repo.magento.com/"
+        }
+    ],
+    "require": {
+        "php": ">=7.0",
+        "magento/module-eav": "^101.0.0",
+        "magento/framework": "^101.0.0",
+        "robmorgan/phinx": "^0.9.2",
+        "zendframework/zend-http": "^2.0"
+    },
+    "autoload": {
+        "files": [
+            "registration.php",
+            "etc/db-config.php"
+        ],
+        "psr-4": {
+            "MX\\PhinxMigrations\\": "src"
+        }
+    },
+    "authors": [
+        {
+            "name": "James Halsall",
+            "email": "james.halsall@inviqa.com"
+        }
+    ],
+    "config": {
+        "bin-dir": "bin/"
+    },
+    "extra": {
+        "map": [
+            [
+                "etc/phinx.php",
+                "../../phinx.php"
+            ]
+        ]
+    }
+}

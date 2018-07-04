@@ -1,0 +1,22 @@
+<?php
+
+use MX\PhinxMigrations\Migration;
+
+class $className extends Migration
+{
+    /**
+     * Upgrade the database.
+     */
+    public function up()
+    {
+
+    }
+
+    /**
+     * Rollback the database.
+     */
+    public function down()
+    {
+
+    }
+}
