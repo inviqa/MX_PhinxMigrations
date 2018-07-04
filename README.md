@@ -52,7 +52,7 @@ We can verify that the module is enabled by running the status command:
 $ bin/magento module:status MX_PhinxMigrations
 ```
 
-Create a `phinx.php` configuration file in the root of your Magento project. You can find an example [here](http://todo)
+Create a `phinx.php` configuration file in the root of your Magento project. You can find an example [here](etc/phinx.php)
 
 ## Using
 

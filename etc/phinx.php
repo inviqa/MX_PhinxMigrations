@@ -13,7 +13,7 @@ return [
     ],
     'environments' => [
         'default_database' => $dbConfig['dbname'],
-        'default' => [
+        $dbConfig['dbname'] => [
             'adapter' => 'mysql',
             'name' => $dbConfig['dbname'],
             'connection' => new PDO(
