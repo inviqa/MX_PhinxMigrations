@@ -13,11 +13,11 @@ changes in Magento. When Magento bootstraps itself it verifies that all module v
 match the versions on disk. If a module version in the database does not match the version in our code then Magento will error
 and show something like:
 
-> 1 exception(s):
-  Exception #0 (Magento\Framework\Exception\LocalizedException): Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.
-  The following modules are outdated:
-  Acme_Foo schema: current version - 0.2.0, required version - 0.3.0
-  Acme_Foo data: current version - 0.2.0, required version - 0.3.0
+> 1 exception(s):\
+> Exception #0 (Magento\Framework\Exception\LocalizedException): Please upgrade your database: Run "bin/magento setup:upgrade" from the Magento root directory.\
+>  The following modules are outdated:\
+>  Acme_Foo schema: current version - 0.2.0, required version - 0.3.0\
+>  Acme_Foo data: current version - 0.2.0, required version - 0.3.0
 
 If we consider the following high level deployment process, this makes zero-downtime deployments impossible due to the fact 
 that at some point, even if just for a very short time, the code and database versions will be out of sync between steps
