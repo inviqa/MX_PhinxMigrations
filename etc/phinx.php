@@ -6,10 +6,10 @@ $dbConfig = getPhinxDbConfig();
 
 return [
     'paths' => [
-        'migrations' => 'src/*/*/etc/migrations',
+        'migrations' => __DIR__. '/src/*/*/etc/migrations',
     ],
     'templates' => [
-        'file' => 'src/*/Migrate/etc/Migration.php.txt',
+        'file' => __DIR__ . '/vendor/mx/module-phinx-migrations/etc/Migration.php.txt',
     ],
     'environments' => [
         'default_database' => $dbConfig['dbname'],

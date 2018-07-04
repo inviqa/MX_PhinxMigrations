@@ -20,7 +20,7 @@
     "autoload": {
         "files": [
             "registration.php",
-            ""
+            "etc/db-config.php"
         ],
         "psr-4": {
             "MX\\PhinxMigrations\\": "src"
