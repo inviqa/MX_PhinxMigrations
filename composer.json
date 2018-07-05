@@ -34,13 +34,5 @@
     ],
     "config": {
         "bin-dir": "bin/"
-    },
-    "extra": {
-        "map": [
-            [
-                "etc/phinx.php",
-                "../../phinx.php"
-            ]
-        ]
     }
 }
