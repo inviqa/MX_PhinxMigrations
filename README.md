@@ -54,12 +54,10 @@ $ bin/magento module:status MX_PhinxMigrations
 
 ## The phinx configuration file
 
-After installing the module a `phinx.php` file should have been copied to your project root folder. There should be no
-further changes required to this file but feel free to edit it as necessary for your project setup.
+After installing the module you will need to create a `phinx.php` file in your project root folder.
 
-NOTE: Currently the file is copied using the [Magento Composer Installer](https://github.com/magento/magento-composer-installer)'s
-`map` functionality in this module's `composer.json` file. It will copy over the top of your `phinx.php` every time this module
-is installed. You should obviously commit your `phinx.php` file to version control if you make any changes to it.
+An example can be found [here](etc/phinx.php). There should be no further changes required to this file but it can be
+edited as necessary for your project setup.
 
 ## Using
 
