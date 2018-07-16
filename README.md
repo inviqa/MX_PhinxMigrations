@@ -131,3 +131,18 @@ If you want to undo your migration then simply execute
 
 1. Upgrading Magento itself will still result in version changes in the Magento `module.xml` files, therefore zero-downtime 
 deployments are not possible in this situation.
+
+## FAQ / troubleshooting
+
+Q. I have run `composer install` but no `phinx.php` file is generated for me, what happened?
+
+A. `MX_PhinxMigrations` relies on the [Magento Composer Installer](https://github.com/magento/magento-composer-installer)'s map
+functionality to copy files into the Magento project root. For some reason it fails to copy some files if you don't have an
+`app/code` folder present, make sure this folder exists and then re-run `composer install` (remember to remove this module from
+your vendor folder first so it re-installs it).
+
+Q. When I run `bin/phinx create ...` it cannot find any migration paths to create the migration file, why?
+
+A. In order for a migration to be created `phinx` will scan your project for `migration` folders in the paths mentioned in the
+[section above](#using). Make sure you create at least one `migration` folder inside one of your Magento module's `etc` folders
+and then it should work as expected.
