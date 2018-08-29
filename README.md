@@ -131,3 +131,11 @@ If you want to undo your migration then simply execute
 
 1. Upgrading Magento itself will still result in version changes in the Magento `module.xml` files, therefore zero-downtime 
 deployments are not possible in this situation.
+
+## FAQ / troubleshooting
+
+Q. When I run `bin/phinx create ...` it cannot find any migration paths to create the migration file, why?
+
+A. In order for a migration to be created `phinx` will scan your project for `migration` folders in the paths mentioned in the
+[section above](#using). Make sure you create at least one `migration` folder inside one of your Magento module's `etc` folders
+and then it should work as expected.
