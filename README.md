@@ -119,7 +119,7 @@ We have access to 3 different setup helpers provided by Magento in each migratio
 
 This module provides a new command that wraps up the whole DB migration process
 
-    bin/magento mx:migrate
+    bin/magento mx:db:migrate
 
 The new command does the following:
 

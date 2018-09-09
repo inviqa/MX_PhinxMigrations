@@ -6,7 +6,7 @@ and adheres to [semantic versioning](http://semver.org/spec/v2.0.0.html).
 
 ## 1.1.0 - Unreleased
 
-* Add new `bin/magento mx:migrate` command that handles migrations seamlessly.
+* Add new `bin/magento mx:db:migrate` command that handles migrations seamlessly.
 
 ## 1.0.1 - 2018-07-05
 

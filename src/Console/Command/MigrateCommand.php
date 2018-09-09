@@ -19,7 +19,7 @@ class MigrateCommand extends Command
     protected function configure()
     {
         $this
-            ->setName('mx:migrate')
+            ->setName('mx:db:migrate')
             ->setDescription('Migrates the database so it is ready for use with the current application code.');
     }
 
