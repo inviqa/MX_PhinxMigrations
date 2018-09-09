@@ -2,6 +2,7 @@
 
 namespace MX\PhinxMigrations\Console\Command;
 
+use Magento\Framework\Console\Cli;
 use Magento\Setup\Console\Command\DbStatusCommand;
 use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\ArrayInput;
@@ -43,6 +44,6 @@ class MigrateCommand extends Command
             echo $buffer;
         });
 
-        return $phinx->isSuccessful() ? 0 : 1;
+        return $phinx->isSuccessful() ? Cli::RETURN_SUCCESS : Cli::RETURN_FAILURE;
     }
 }
