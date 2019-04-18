@@ -12,8 +12,8 @@
     ],
     "require": {
         "php": ">=7.0",
-        "magento/module-eav": "^101.0.0",
-        "magento/framework": "^101.0.0",
+        "magento/module-eav": "^101.0|^102.0",
+        "magento/framework": "^101.0|^102.0",
         "robmorgan/phinx": "^0.9.2",
         "zendframework/zend-http": "^2.0"
     },
