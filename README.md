@@ -36,11 +36,13 @@ The module is currently supported on Magento >= 2.1.
 
 Allow installing directly from the github:
 
+```
 $ composer config repositories.inviqa__MX_PhinxMigrations git https://github.com/inviqa/MX_PhinxMigrations
 ```
 
 Add the module to the require section of the composer file:
 
+```
 $ composer require inviqa/MX_PhinxMigrations
 ```
 
