@@ -11,6 +11,7 @@ use Magento\Framework\Setup\SchemaSetupInterface;
 use Magento\Setup\Module\DataSetup;
 use Magento\Setup\Module\Setup;
 use Phinx\Migration\AbstractMigration;
+use RuntimeException;
 use Zend\Http\PhpEnvironment\Request;
 
 /**
@@ -36,9 +37,13 @@ abstract class Migration extends AbstractMigration
      */
     protected function init()
     {
-        $bootstrap = Bootstrap::create(BP, $this->getServerParams());
-
-        $this->objectManager = $bootstrap->getObjectManager();
+        try {
+            $this->objectManager = ObjectManager::getInstance();
+        } catch (RuntimeException $e) {
+            $bootstrap = Bootstrap::create(BP, $this->getServerParams());
+            $this->objectManager = $bootstrap->getObjectManager();
+        }
+        
         $this->schemaSetup = $this->getService(Setup::class);
         $this->dataSetup = $this->getService(DataSetup::class);
         $this->eavSetup = $this->getService(EavSetup::class);
