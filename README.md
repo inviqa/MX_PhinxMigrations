@@ -117,9 +117,17 @@ We have access to 3 different setup helpers provided by Magento in each migratio
 
 ### Execute migrations
 
-When you are happy with your migration you can execute it as follows
+This module provides a new command that wraps up the whole DB migration process
 
-    bin/phinx migrate
+    bin/magento mx:db:migrate
+
+The new command does the following:
+
+1. Checks if a `setup:upgrade` is required (e.g. if a 3rd party module was updated or Magento was upgraded)
+2. Runs `setup:upgrade` if it is required
+3. Runs `bin/phinx migrate`
+
+This should replace the `bin/magento setup:upgrade` command in your deployment and development workflow.
 
 ### Rolling back
 
