@@ -2,7 +2,7 @@
 
 ## About
 
-The **MX_PhinxMigrations** module integrates [Phinx](https://phinx.org) database migrations into Magento 2 as a 
+The **MX_PhinxMigrations** module integrates [Phinx](https://phinx.org) database migrations into Magento 2 as a
 replacement for the built-in `setup:upgrade` method of triggering schema and data changes, therefore enabling zero-downtime
 deployments.
 
@@ -19,7 +19,7 @@ and show something like:
 >  Acme_Foo schema: current version - 0.2.0, required version - 0.3.0\
 >  Acme_Foo data: current version - 0.2.0, required version - 0.3.0
 
-If we consider the following high level deployment process, this makes zero-downtime deployments impossible due to the fact 
+If we consider the following high level deployment process, this makes zero-downtime deployments impossible due to the fact
 that at some point, even if just for a very short time, the code and database versions will be out of sync between steps
 2 and 3:
 
@@ -33,10 +33,17 @@ The module is currently supported on Magento >= 2.1.
 
 ## Installing
 
+
+Allow installing directly from the github:
+
+```
+$ composer config repositories.inviqa__MX_PhinxMigrations git https://github.com/inviqa/MX_PhinxMigrations
+```
+
 Add the module to the require section of the composer file:
 
 ```
-$ composer require mx/module-phinx-migrations
+$ composer require inviqa/MX_PhinxMigrations
 ```
 
 ## Enabling the module
@@ -129,7 +136,7 @@ If you want to undo your migration then simply execute
 
 ## Limitations
 
-1. Upgrading Magento itself will still result in version changes in the Magento `module.xml` files, therefore zero-downtime 
+1. Upgrading Magento itself will still result in version changes in the Magento `module.xml` files, therefore zero-downtime
 deployments are not possible in this situation.
 
 ## FAQ / troubleshooting
@@ -139,3 +146,19 @@ Q. When I run `bin/phinx create ...` it cannot find any migration paths to creat
 A. In order for a migration to be created `phinx` will scan your project for `migration` folders in the paths mentioned in the
 [section above](#using). Make sure you create at least one `migration` folder inside one of your Magento module's `etc` folders
 and then it should work as expected.
+
+## TODO
+
+Repo:
+
+https://github.com/inviqa/MX_PhinxMigrations
+
+Should be rename like:
+
+https://github.com/inviqa/mx_phinxmigrations
+
+Reason: composer requirement "lower case"
+
+
+
+
